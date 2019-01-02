@@ -9,4 +9,4 @@ In the project directory, you can run:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-[Imgur](https://i.imgur.com/3cdd7Js.png)
+<img src="https://i.imgur.com/3cdd7Js.png" alt="Git Compare">
