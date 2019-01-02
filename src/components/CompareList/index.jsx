@@ -2,34 +2,40 @@ import React from 'react';
 
 import { Container, Repository } from './styles';
 
-const CompareList = () => (
+const CompareList = ({ repositories }) => (
   <Container>
-    <Repository>
-      <header>
-        <img src="https://avatars3.githubusercontent.com/u/69631?v=4" alt="facebook" />
-        <strong>react</strong>
-        <small>facebook</small>
-      </header>
+    {repositories.map(repository => (
+      <Repository key={repository.id}>
+        <header>
+          <img src={repository.owner.avatar_url} alt={repository.owner.login} />
+          <strong>{repository.name}</strong>
+          <small>{repository.owner.login}</small>
+        </header>
 
-      <ul>
-        <li>
-          95,545&ensp;
-          <small>starts</small>
-        </li>
-        <li>
-          95,545&ensp;
-          <small>forks</small>
-        </li>
-        <li>
-          95,545&ensp;
-          <small>issues</small>
-        </li>
-        <li>
-          3 days ago&ensp;
-          <small>last commit</small>
-        </li>
-      </ul>
-    </Repository>
+        <ul>
+          <li>
+            {repository.stargazers_count}
+            &ensp;
+            <small>starts</small>
+          </li>
+          <li>
+            {repository.forks_count}
+            &ensp;
+            <small>forks</small>
+          </li>
+          <li>
+            {repository.open_issues_count}
+            &ensp;
+            <small>issues</small>
+          </li>
+          <li>
+            {repository.pushed_at}
+            &ensp;
+            <small>last commit</small>
+          </li>
+        </ul>
+      </Repository>
+    ))}
   </Container>
 );
 
